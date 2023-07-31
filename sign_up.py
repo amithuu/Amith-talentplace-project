@@ -78,7 +78,7 @@ class Sign_up:
         signup_button = Button(signup_frame, text="Sign-Up", font=("times new roman", 15,"bold"), background="#6007cb", cursor="hand2", relief="flat", foreground="white")
         signup_button.place(x=190, y=410, width=150, height=40)
 
-        #dsfb
+        
 
 if __name__ == "__main__":
     signup_page = Tk()
