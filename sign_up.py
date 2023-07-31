@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-
+from log_in import Login
 
 class Sign_up:
 
@@ -21,7 +21,7 @@ class Sign_up:
         side_img.place(x=0, y=0, width=700, height=1080)
         
         # log-in:
-        login_button = Button(self.signup_page, text="Log-in", font=("times new roman", 15,"bold", "underline"), foreground="#6007cb", cursor="hand2", relief="flat")
+        login_button = Button(self.signup_page, text="Log-in", font=("times new roman", 15,"bold", "underline"), foreground="#6007cb", cursor="hand2", relief="flat", command=self.Login)
         login_button.place(x=1420, y=0, width=85, height=40)
 
         # frame for Sing-Up
@@ -77,12 +77,11 @@ class Sign_up:
         # SignUp:
         signup_button = Button(signup_frame, text="Sign-Up", font=("times new roman", 15,"bold"), background="#6007cb", cursor="hand2", relief="flat", foreground="white")
         signup_button.place(x=190, y=410, width=150, height=40)
-
-        # SignUp:
-        signup_button = Button(signup_frame, text="Sign-Up", font=("times new roman", 15,"bold"), background="#6007cb", cursor="hand2", relief="flat", foreground="white")
-        signup_button.place(x=190, y=410, width=150, height=40)
-
         
+        #functions##
+    def Login(self):
+        self.login_window=Toplevel(self.signup_page)
+        self.login = Login(self.login_window)
 
 if __name__ == "__main__":
     signup_page = Tk()

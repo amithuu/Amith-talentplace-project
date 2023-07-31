@@ -5,13 +5,15 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from sign_up import Sign_up
 
-
 class TalentPlace:
 
     def __init__(self, root):
         self.root = root
         self.root.geometry("1920x1080+0+0")
         self.root.title("TalentPlace.ai")
+
+        #scroll page we will learn it later..
+        # scroll_page = ttk.Scrollbar(self.root, orient=VERTICAL)
 
         img = Image.open(
             r"C:\Users\Amith\Desktop\New folder\Photo\bgimage.png")
@@ -72,7 +74,7 @@ class TalentPlace:
     "============Functions============"
 
     def Sign_Up(self):
-        self.signup_window = Toplevel(self.root)
+        self.signup_window  = Toplevel(self.root)
         self.signup = Sign_up(self.signup_window)
 
 
