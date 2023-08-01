@@ -12,6 +12,14 @@ class TalentPlace:
         self.root.geometry("1920x1080+0+0")
         self.root.title("TalentPlace.ai")
 
+        # yscroll = ttk.Scrollbar(self.root, orient=VERTICAL)
+        # xscroll = ttk.Scrollbar(self.root, orient=HORIZONTAL)
+
+        # xscroll.pack(side="bottom", fill=X)
+        # yscroll.pack(side="right", fill=Y)
+
+        # self.root.pack(fill=BOTH, expand=1)
+
         #scroll page we will learn it later..
         # scroll_page = ttk.Scrollbar(self.root, orient=VERTICAL)
 
