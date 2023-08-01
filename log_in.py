@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
+import mysql.connector
+from tkinter import messagebox
 
 class Login:
 
@@ -8,6 +10,10 @@ class Login:
         self.login_page=login_page
         self.login_page.geometry("1920x1080+0+0")
         self.login_page.title("Login")
+
+        #__ variables___
+        self.var_emailid = StringVar()
+        self.var_password = StringVar()
 
         # Image at the right side
 
@@ -29,20 +35,41 @@ class Login:
         text_name = Label(bg_image_right, text="Log_in to your Account", font=("times new roman", 30, "bold"), relief="flat", fg="#6007cb", bg="white")
         text_name.place(x=40, y=50, width=500, height=50)
 
-        email_enter = Entry(bg_image, text="Enter email id",font = ("times new roman", 15, "bold"),relief="flat",bg="#e8e0df", fg="#898385", justify="left")
+        email_enter = Entry(bg_image, text="Enter email id",textvariable=self.var_emailid,font = ("times new roman", 15, "bold"),relief="flat",bg="#e8e0df", fg="#898385", justify="left")
         email_enter.insert(0, "Enter Email ID")
         email_enter.pack()
         email_enter.place(x=1050, y=200, width=200, height=30)
 
-        password_text = Entry(bg_image, text="Password", font=("times new roman", 15, "bold"), relief="flat", justify="left",bg="#e8e0df", fg="#898385")
+        password_text = Entry(bg_image, text="Password",textvariable=self.var_password ,font=("times new roman", 15, "bold"), relief="flat", justify="left",bg="#e8e0df", fg="#898385")
         password_text.insert(0,"Enter Password")
         password_text.pack()
         password_text.place(x=1150, y=300, width=200, height=30)
 
-        login_button = Button(bg_image, text="Log_in", font=("times new roman", 15, "bold"), fg="white",bg="#6007cb",cursor="hand2", relief="flat")
+        login_button = Button(bg_image, text="Log_in", font=("times new roman", 15, "bold"), fg="white",bg="#6007cb",cursor="hand2", relief="flat", command=self.login_message)
         login_button.place(x=1200, y=400, width=200, height=30)
 
-                           
+    def login_message(self):
+        if self.var_emailid.get()=="Enter Email ID" and self.var_password.get()=="Enter Password":
+            messagebox.showwarning("Warning", "Please enter all the details", parent=self.login_page)
+
+        elif self.var_emailid.get()=="Enter Email ID" or "":
+            messagebox.showwarning("Warning", "Please enter email id", parent=self.login_page)
+
+        elif self.var_password.get()=="Enter Password" or "":
+            messagebox.showwarning("Warning", "Please enter password", parent=self.login_page)
+
+        else:
+            try:
+                conn=mysql.connector.connect(host="localhost", username="root", password="amithMYSQL@1999", database="talentplace")
+                my_cur = conn.cursor()
+                my_cur.execute("insert into login values(%s, %s)", (self.var_emailid.get(), self.var_password.get()))
+
+                conn.commit()
+                conn.close()
+                messagebox.showinfo("Success", "Logged in successful", parent=self.login_page)
+            except Exception as es:
+                messagebox.showerror("Error", f"Logged in failed sue to{es}", parent=self.login_page)
+                                           
 
 if __name__ == "__main__":
     login_page = Tk()
