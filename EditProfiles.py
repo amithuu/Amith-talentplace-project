@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-
+from Personal_details import Personal_details
 class Editprofiles:
 
     def __init__(self, editprofile_page):
@@ -104,14 +104,17 @@ class Editprofiles:
         b17 = Button(details_frame, text="Top Skills", font=("times new roman", 13, "bold"), relief="groove",bd=1, bg="#FFFFFF", fg="Black", anchor="center", cursor="hand2")
         b17.place(x=20, y=500, width=420, height=50)
 
-        b2 = Button(details_frame, text="Save", font=("times new roman", 10, "bold"), relief="groove",bd=1, bg="#8024F5", fg="#FFFFFF", anchor="center", cursor="hand2")
+        b2 = Button(details_frame, text="Save",command=self.Personaldetails, font=("times new roman", 10, "bold"), relief="groove",bd=1, bg="#8024F5", fg="#FFFFFF", anchor="center", cursor="hand2")
         b2.place(x=400, y=570, width=100, height=30)
 
     # ___________Function edit profile_______
     def Editprofile(self):
         self.editprofile_window=Toplevel(self.editprofile_page)
-        self.editprofile=Editprofiles(self.editprofile)
+        self.editprofile=Editprofiles(self.editprofile_window)
 
+    # def Personaldetails(self):
+    #     self.personaldetails_window =Toplevel(self.editprofile_page)
+    #     self.personaldetails = Personal_details(self.personaldetails_window)
 
 
 if __name__ == "__main__":

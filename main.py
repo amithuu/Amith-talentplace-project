@@ -23,8 +23,7 @@ class TalentPlace:
         #scroll page we will learn it later..
         # scroll_page = ttk.Scrollbar(self.root, orient=VERTICAL)
 
-        img = Image.open(
-            r"C:\Users\Amith\Desktop\New folder\Photo\bgimage.png")
+        img = Image.open(r"C:\Users\Amith\Desktop\New folder\Talentplace.ai_Pyhton\Images\bgimage.png")
         img = img.resize((1550, 500), Image.Resampling.LANCZOS)
         self.image = ImageTk.PhotoImage(img)
 
@@ -32,7 +31,7 @@ class TalentPlace:
         f_lbl.place(x=0, y=0, width=1550, height=500)
 
         img1 = Image.open(
-            r"C:\Users\Amith\Desktop\New folder\Photo\belowbg.jpg")
+            r"C:\Users\Amith\Desktop\New folder\Talentplace.ai_Pyhton\Images\belowbg.jpg")
         img1 = img1.resize((500, 250), Image.Resampling.LANCZOS)
         self.image1 = ImageTk.PhotoImage(img1)
 

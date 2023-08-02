@@ -23,7 +23,7 @@ class Sign_up:
 
         # Side image
 
-        side_image = Image.open( r"C:\Users\Amith\Desktop\New folder\Photo\img2.jpg")
+        side_image = Image.open( r"C:\Users\Amith\Desktop\New folder\Talentplace.ai_Pyhton\Images\signup_img.jpg")
         side_image = side_image.resize((700,1080), Image.Resampling.LANCZOS)
         self.side_image = ImageTk.PhotoImage(side_image)
 

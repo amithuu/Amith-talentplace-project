@@ -17,7 +17,7 @@ class Login:
 
         # Image at the right side
 
-        left_image = Image.open(r"C:\Users\Amith\Desktop\New folder\Photo\wallpaperflare.com_wallpaper.jpg")
+        left_image = Image.open(r"C:\Users\Amith\Desktop\New folder\Talentplace.ai_Pyhton\Images\wallpaperflare.com_wallpaper.jpg")
         left_image=left_image.resize((1920,1080), Image.Resampling.LANCZOS)
         self.left_bg_image = ImageTk.PhotoImage(left_image)
 
@@ -25,7 +25,7 @@ class Login:
         bg_image.place(x=0, y=0, width=1920, height=1080)
 
         # image at right side
-        right_image = Image.open(r"C:\Users\Amith\Desktop\New folder\Photo\login.jpg")
+        right_image = Image.open(r"C:\Users\Amith\Desktop\New folder\Talentplace.ai_Pyhton\Images\login.jpg")
         right_image=right_image.resize((600,600), Image.Resampling.LANCZOS)
         self.right_bg__image= ImageTk.PhotoImage(right_image)
 

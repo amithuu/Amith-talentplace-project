@@ -143,7 +143,7 @@ class Personal_details:
     #_____Function Edit profile____
     def Editprofile(self):
         self.editprofile_window=Toplevel(self.personaldetails_page)
-        self.editprofile=Editprofiles(self.editprofile)
+        self.editprofile=Editprofiles(self.editprofile_window)
 
     def save_details(self):
         if self.var_firstname.get()=="" and self.var_lastname.get()=="" and self.var_location.get()=="Enter Location" and self.var_gender.get()=="" and self.var_currency.get()=="" and self.var_dob.get()=="" and self.var_experiencemonth.get()=="Select Month" and self.var_experienceyear.get()=="" and self.var_githublink.get()=="Github Link" and self.var_linkedinlink.get()=="Linkedin Link" and self.var_twitterlink.get()=="Twitter Link":
