@@ -3,9 +3,9 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 import mysql.connector
 from tkinter import messagebox
-from EditProfiles import Editprofiles
+import Edit_Profiles as e1
 
-class Personal_details:
+class PersonalDetail:
 
     def __init__(self, peronaldetails_page):
         self.personaldetails_page=peronaldetails_page
@@ -35,7 +35,7 @@ class Personal_details:
         b1 = Button(details_frame, text="Dashboard", font=("times new roman", 13), relief="flat", bg="white", fg="Black", anchor="center", cursor="hand2")
         b1.place(x=3, y=10, width=170, height=30)
 
-        b2 = Button(details_frame, text="Edit Profiles",command=self.Editprofile, font=("times new roman", 13), relief="flat", bg="white", fg="Black", anchor="center", cursor="hand2")
+        b2 = Button(details_frame, text="Edit Profiles",command=self.editprofile_page, font=("times new roman", 13), relief="flat", bg="white", fg="Black", anchor="center", cursor="hand2")
         b2.place(x=3, y=60, width=170, height=30)
 
         b3 = Button(details_frame, text="My profile", font=("times new roman", 13), relief="flat", bg="white", fg="black", anchor="center", cursor="hand2")
@@ -140,10 +140,14 @@ class Personal_details:
         save = Button(personaldetails_frame, text="Save",command=self.save_details, font=("times new roman", 15, "bold"), bg="#8024F5", fg="#FFFFFE")
         save.place(x=480, y=600,width=80,height=40)
 
+
+
     #_____Function Edit profile____
-    def Editprofile(self):
+
+    def editprofile_page(self):
         self.editprofile_window=Toplevel(self.personaldetails_page)
-        self.editprofile=Editprofiles(self.editprofile_window)
+        self.editprofile=e1.EditProfile(self.editprofile_window)
+
 
     def save_details(self):
         if self.var_firstname.get()=="" and self.var_lastname.get()=="" and self.var_location.get()=="Enter Location" and self.var_gender.get()=="" and self.var_currency.get()=="" and self.var_dob.get()=="" and self.var_experiencemonth.get()=="Select Month" and self.var_experienceyear.get()=="" and self.var_githublink.get()=="Github Link" and self.var_linkedinlink.get()=="Linkedin Link" and self.var_twitterlink.get()=="Twitter Link":
@@ -180,5 +184,5 @@ class Personal_details:
 
 if __name__ == "__main__":
     personaldetails = Tk()
-    obj = Personal_details(personaldetails)
+    obj = PersonalDetail(personaldetails)
     personaldetails = mainloop()

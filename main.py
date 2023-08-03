@@ -4,6 +4,8 @@ from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
 from sign_up import Sign_up
+from EP import EditProfile
+from PD import PersonalDetail
 
 class TalentPlace:
 
