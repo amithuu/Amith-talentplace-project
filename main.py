@@ -4,8 +4,6 @@ from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
 from sign_up import Sign_up
-from EP import EditProfile
-from PD import PersonalDetail
 
 class TalentPlace:
 
@@ -88,7 +86,6 @@ class TalentPlace:
 
 
 if __name__ == "__main__":
-
     root = Tk()
     "-> creating an object of root for Tk()"
     obj = TalentPlace(root)

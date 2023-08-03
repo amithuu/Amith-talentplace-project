@@ -35,7 +35,7 @@ class PersonalDetail:
         b1 = Button(details_frame, text="Dashboard", font=("times new roman", 13), relief="flat", bg="white", fg="Black", anchor="center", cursor="hand2")
         b1.place(x=3, y=10, width=170, height=30)
 
-        b2 = Button(details_frame, text="Edit Profiles",command=self.editprofile_page, font=("times new roman", 13), relief="flat", bg="white", fg="Black", anchor="center", cursor="hand2")
+        b2 = Button(details_frame, text="Edit Profiles",command=self.open_editprofile, font=("times new roman", 13), relief="flat", bg="white", fg="Black", anchor="center", cursor="hand2")
         b2.place(x=3, y=60, width=170, height=30)
 
         b3 = Button(details_frame, text="My profile", font=("times new roman", 13), relief="flat", bg="white", fg="black", anchor="center", cursor="hand2")
@@ -144,7 +144,7 @@ class PersonalDetail:
 
     #_____Function Edit profile____
 
-    def editprofile_page(self):
+    def open_editprofile(self):
         self.editprofile_window=Toplevel(self.personaldetails_page)
         self.editprofile=e1.EditProfile(self.editprofile_window)
 
@@ -176,11 +176,27 @@ class PersonalDetail:
                 conn.commit()
                 conn.close()
                 messagebox.showinfo("Success", "Personal Details Saved", parent=self.personaldetails_page)
-
             except Exception as es:
                 messagebox.showerror("Error", f"Personal Details not saved due to {es}", parent=self.personaldetails_page)
 
-    
+    #____fetch first name____
+    # def fetch_data(self):
+    #     if self.var_firstname.get()=="":
+    #         try:
+    #             conn=mysql.connector.connect(host="localhost", username="root", password="amithMYSQL@1999", database="talentplace")
+    #             my_cur = conn.cursor()
+    #             my_cur.execute("select firstname from signup(%s)", self.var_firstname.get())
+    #             data = my_cur.fetchall()
+
+    #             if len(data)!=0:
+    #                 self.signup.insert("", END, data)
+
+    #             conn.commit()
+    #             conn.close()
+    #         except EXCEPTION as es:
+    #             messagebox.showerror("error", "Query is not good")
+
+
 
 if __name__ == "__main__":
     personaldetails = Tk()

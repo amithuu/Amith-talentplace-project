@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-from PD import PersonalDetail
+from Personal_details import PersonalDetail
 
 class EditProfile:
 
@@ -63,7 +63,7 @@ class EditProfile:
 
         # Buttons inside Frame
 
-        b1 = Button(details_frame, text="Personal Details",command=self.Redirect_personaldetails, font=("times new roman", 13, "bold"),
+        b1 = Button(details_frame, text="Personal Details",command=self.open_personaldetails, font=("times new roman", 13, "bold"),
                     relief="groove", bd=1, bg="#FFFFFF", fg="Black", anchor="center", cursor="hand2")
         b1.place(x=20, y=20, width=420, height=50)
 
@@ -137,7 +137,7 @@ class EditProfile:
 
     # ___________Function edit profile_______
 
-    def Redirect_personaldetails(self):
+    def open_personaldetails(self):
         self.personaldetails_window =Toplevel(self.editprofile_page)
         self.personaldetails = PersonalDetail(self.personaldetails_window)
 
